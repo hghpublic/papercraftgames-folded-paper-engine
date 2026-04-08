@@ -4,7 +4,7 @@
   "description": "Folded Paper Engine",
   "scripts": {
     "dev:web": "astro dev",
-    "build:web": "astro build",
+    "build:web": "astro build && ts-node ./scripts/validateWebsiteCanonicals.ts",
     "preview:web": "astro preview",
     "setup-dist": "rm -rf ./dist && mkdir -p dist",
     "copy-cname": "cp ./CNAME ./dist/website/CNAME && touch ./dist/website/.nojekyll",

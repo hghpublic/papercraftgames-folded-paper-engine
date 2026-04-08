@@ -3,6 +3,9 @@ const {
   title = "Folded Paper Engine",
   description = "Folded Paper Engine – Blender-to-Godot addon that makes level and gameplay creation as easy as a few clicks!",
 } = Astro.props;
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const canonical = canonicalUrl.toString().replace(/\/$/, "");
 ---
 
 <html lang="en">
@@ -59,7 +62,7 @@ const {
     <meta name="description" content={description}/>
     <title>Folded Paper Engine | {title}</title>
 
-    <link rel="canonical" href="https://fpe.papercraft.games">
+    <link rel="canonical" href={canonical}>
     <link rel="sitemap" href="/sitemap-index.xml"/>
     <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96"/>
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg"/>
