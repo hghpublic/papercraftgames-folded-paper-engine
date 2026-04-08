@@ -1,0 +1,98 @@
+# FPE indexing fix plan for Codex
+
+## Goal
+
+Make Google stop treating most of the site as duplicates of the homepage.
+
+## Scope
+
+Only do the changes that directly help indexing.
+
+* Fix canonical tags
+* Verify generated HTML
+* Add a regression check so this cannot silently ship again
+
+## 1) Fix the shared canonical logic
+
+**File to edit:** `src/website/layouts/SiteLayout.astro`
+
+Right now the canonical tag is hard-coded to the homepage. That causes many pages to declare the homepage as their canonical URL.
+
+### Required change
+
+Generate the canonical URL from the current page path instead of hard-coding it.
+
+### Requirements
+
+* Homepage canonical must be: `https://fpe.papercraft.games`
+* Every other page must canonicalize to itself
+* Do not let docs pages or API pages point to the homepage as canonical
+* Use `Astro.site` plus the current pathname
+* Normalize the homepage so it does **not** end with a trailing slash if that is your preferred public URL
+
+### Implementation shape
+
+Use logic equivalent to this:
+
+```ts
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const canonical = canonicalUrl.toString().replace(/\/$/, "");
+```
+
+Then render:
+
+```astro
+<link rel="canonical" href={canonical} />
+```
+
+## 2) Make sure all layout consumers inherit the fix
+
+**Files to verify:**
+
+* `src/website/layouts/GuideLayout.astro`
+* `src/website/layouts/GodotAPILayout.astro`
+
+These should continue using `SiteLayout` so the canonical fix automatically applies everywhere.
+
+Do **not** add page-specific canonical hacks unless a page truly needs a different canonical.
+
+## 3) Rebuild and verify actual output HTML
+
+After the code change, build the site and verify the generated files.
+
+### Must pass
+
+* `dist/website/index.html` canonical is `https://fpe.papercraft.games`
+* A docs page canonical points to its own docs URL
+* A Godot API page canonical points to its own API URL
+* No non-home page canonical points to the homepage
+
+### Suggested checks
+
+```bash
+yarn build:web
+
+grep -R "<link rel=\"canonical\"" -n dist/website/index.html
+
+grep -R "<link rel=\"canonical\"" -n dist/website/docs/*.html | head
+
+grep -R "<link rel=\"canonical\"" -n dist/website/godot-api-docs/*.html | head
+```
+
+## Done criteria
+
+This task is done when all of the following are true:
+
+* The shared layout no longer hard-codes the homepage canonical
+* Built HTML shows self-canonicals for non-home pages
+* The deployed fix causes non-home pages to stop declaring the homepage as canonical
+
+## Non-goals
+
+Do not spend time on these in this task:
+
+* backlink work
+* content marketing
+* social promotion
+* generic SEO cleanup unrelated to indexing
+* speculative fixes with no clear indexing impact
