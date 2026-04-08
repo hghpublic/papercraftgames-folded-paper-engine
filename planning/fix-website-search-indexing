@@ -8,9 +8,16 @@ Make Google stop treating most of the site as duplicates of the homepage.
 
 Only do the changes that directly help indexing.
 
-* Fix canonical tags
-* Verify generated HTML
-* Add a regression check so this cannot silently ship again
+- [x] Fix canonical tags
+- [x] Verify generated HTML
+- [x] Add a regression check so this cannot silently ship again
+
+## Current phase
+
+- [x] Convert this plan into a live checklist and track progress
+- [x] Fix the shared canonical logic in `src/website/layouts/SiteLayout.astro`
+- [x] Verify `GuideLayout.astro` and `GodotAPILayout.astro` inherit the shared fix
+- [x] Rebuild the site and inspect generated canonical tags
 
 ## 1) Fix the shared canonical logic
 
@@ -24,11 +31,12 @@ Generate the canonical URL from the current page path instead of hard-coding it.
 
 ### Requirements
 
-* Homepage canonical must be: `https://fpe.papercraft.games`
-* Every other page must canonicalize to itself
-* Do not let docs pages or API pages point to the homepage as canonical
-* Use `Astro.site` plus the current pathname
-* Normalize the homepage so it does **not** end with a trailing slash if that is your preferred public URL
+- [x] Homepage canonical must be `https://fpe.papercraft.games`
+- [x] Every other page canonicalizes to itself
+- [x] Docs pages do not point to the homepage as canonical
+- [x] API pages do not point to the homepage as canonical
+- [x] Use `Astro.site` plus the current pathname
+- [x] Normalize the homepage so it does not end with a trailing slash
 
 ### Implementation shape
 
@@ -49,12 +57,12 @@ Then render:
 
 **Files to verify:**
 
-* `src/website/layouts/GuideLayout.astro`
-* `src/website/layouts/GodotAPILayout.astro`
+- [x] `src/website/layouts/GuideLayout.astro`
+- [x] `src/website/layouts/GodotAPILayout.astro`
 
 These should continue using `SiteLayout` so the canonical fix automatically applies everywhere.
 
-Do **not** add page-specific canonical hacks unless a page truly needs a different canonical.
+Do not add page-specific canonical hacks unless a page truly needs a different canonical.
 
 ## 3) Rebuild and verify actual output HTML
 
@@ -62,10 +70,10 @@ After the code change, build the site and verify the generated files.
 
 ### Must pass
 
-* `dist/website/index.html` canonical is `https://fpe.papercraft.games`
-* A docs page canonical points to its own docs URL
-* A Godot API page canonical points to its own API URL
-* No non-home page canonical points to the homepage
+- [x] `dist/website/index.html` canonical is `https://fpe.papercraft.games`
+- [x] A docs page canonical points to its own docs URL
+- [x] A Godot API page canonical points to its own API URL
+- [x] No non-home page canonical points to the homepage
 
 ### Suggested checks
 
@@ -83,16 +91,16 @@ grep -R "<link rel=\"canonical\"" -n dist/website/godot-api-docs/*.html | head
 
 This task is done when all of the following are true:
 
-* The shared layout no longer hard-codes the homepage canonical
-* Built HTML shows self-canonicals for non-home pages
-* The deployed fix causes non-home pages to stop declaring the homepage as canonical
+- [x] The shared layout no longer hard-codes the homepage canonical
+- [x] Built HTML shows self-canonicals for non-home pages
+- [~] The deployed fix causes non-home pages to stop declaring the homepage as canonical
 
 ## Non-goals
 
 Do not spend time on these in this task:
 
-* backlink work
-* content marketing
-* social promotion
-* generic SEO cleanup unrelated to indexing
-* speculative fixes with no clear indexing impact
+- backlink work
+- content marketing
+- social promotion
+- generic SEO cleanup unrelated to indexing
+- speculative fixes with no clear indexing impact
