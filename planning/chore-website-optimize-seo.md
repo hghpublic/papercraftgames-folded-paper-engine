@@ -9,3 +9,16 @@ If there is content that needs to be added, it needs to be high quality and only
 the SEO. The same idea applies to content being modified.
 
 Keep this summary. Track progress below.
+
+## Checklist
+
+- [x] Audit the website's current SEO surface area and identify the highest-impact fixes that do not change link locations.
+- [x] Improve shared website SEO primitives.
+  - [x] Strengthen global metadata in the shared site layout.
+  - [x] Add structured data and social-sharing metadata where it improves discoverability.
+  - [x] Fix heading semantics so each major page exposes a clear primary heading.
+- [x] Improve page-level metadata across the main website sections.
+  - [x] Add targeted descriptions and preview images for the homepage and top-level docs hubs.
+  - [x] Add targeted descriptions and preview images for guide pages under `/docs`.
+  - [x] Add targeted descriptions for Godot API doc index and generated class pages.
+- [x] Validate the website build output and confirm SEO-critical files still generate correctly.
