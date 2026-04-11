@@ -22,3 +22,9 @@ Keep this summary. Track progress below.
   - [x] Add targeted descriptions and preview images for guide pages under `/docs`.
   - [x] Add targeted descriptions for Godot API doc index and generated class pages.
 - [x] Validate the website build output and confirm SEO-critical files still generate correctly.
+
+## Second Pass Checklist
+
+- [x] Audit crawl paths and indexability against the generated static output.
+- [x] Strengthen internal linking between the homepage, docs hubs, guides, and API docs without moving existing links.
+- [x] Rebuild and verify the generated output after the second-pass crawlability changes.
