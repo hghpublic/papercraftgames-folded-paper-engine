@@ -2,14 +2,33 @@
 import SiteLayout from "./SiteLayout.astro";
 
 const {title} = Astro.props;
+const isGuideIndex = Astro.url.pathname === "/docs/folded-paper-engine-guide" || Astro.url.pathname === "/docs/folded-paper-engine-guide.html";
 ---
 
-<SiteLayout title={title}>
+<SiteLayout {...Astro.props} title={title}>
     <Fragment slot="head">
-        <link rel="stylesheet" href="assets/css/docs.css"/>
-        <link rel="stylesheet" href="assets/css/guide.css"/>
+        <link rel="stylesheet" href="/assets/css/docs.css"/>
+        <link rel="stylesheet" href="/assets/css/guide.css"/>
         <slot name="head"/>
     </Fragment>
+
+    <nav class="section section-breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        {!isGuideIndex && (
+            <>
+                <span>/</span>
+                <a href="/docs/folded-paper-engine-guide">Engine Guide</a>
+                <span>/</span>
+                <span aria-current="page">{title}</span>
+            </>
+        )}
+        {isGuideIndex && (
+            <>
+                <span>/</span>
+                <span aria-current="page">Engine Guide</span>
+            </>
+        )}
+    </nav>
 
     <slot/>
 </SiteLayout>

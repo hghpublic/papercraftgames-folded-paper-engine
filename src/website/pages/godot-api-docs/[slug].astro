@@ -11,9 +11,17 @@ export async function getStaticPaths() {
 }
 
 const {page} = Astro.props as { page: GodotApiPage };
+const pageDescription =
+  page.summary && page.summary.trim().length >= 40
+    ? page.summary
+    : `Reference documentation for ${page.title} in the Folded Paper Engine Godot addon API, including class details, methods, properties, signals, and constants.`;
 ---
 
-<GodotApiLayout title={page.title}>
+<GodotApiLayout
+    title={page.title}
+    description={pageDescription}
+    image="/assets/images/godot-feature-splash.png"
+>
     <article class="api-doc-article">
         <div class="api-doc-body" set:html={page.bodyHtml}/>
     </article>
