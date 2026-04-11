@@ -1,7 +1,7 @@
 import FS from "fs";
 import Path from "path";
 
-const SITE_URL = "https://fpe.papercraft.games";
+const SITE_URL = "https://foldedpaperengine.com";
 const DIST_ROOT = Path.resolve(__dirname, "..", "dist", "website");
 const HOMEPAGE_PATH = Path.join(DIST_ROOT, "index.html");
 

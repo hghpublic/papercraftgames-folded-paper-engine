@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   srcDir: './src/website',
   outDir: './dist/website',
-  site: 'https://fpe.papercraft.games',
+  site: 'https://foldedpaperengine.com',
   build: {
     format: "file",
   },
@@ -14,8 +14,8 @@ export default defineConfig({
     react(),
     sitemap({
       serialize(item) {
-        if (item.url === "https://fpe.papercraft.games/") {
-          return {...item, url: "https://fpe.papercraft.games"};
+        if (item.url === "https://foldedpaperengine.com/") {
+          return {...item, url: "https://foldedpaperengine.com"};
         }
 
         return item;

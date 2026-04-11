@@ -31,7 +31,7 @@ Generate the canonical URL from the current page path instead of hard-coding it.
 
 ### Requirements
 
-- [x] Homepage canonical must be `https://fpe.papercraft.games`
+- [x] Homepage canonical must be `https://foldedpaperengine.com`
 - [x] Every other page canonicalizes to itself
 - [x] Docs pages do not point to the homepage as canonical
 - [x] API pages do not point to the homepage as canonical
@@ -70,7 +70,7 @@ After the code change, build the site and verify the generated files.
 
 ### Must pass
 
-- [x] `dist/website/index.html` canonical is `https://fpe.papercraft.games`
+- [x] `dist/website/index.html` canonical is `https://foldedpaperengine.com`
 - [x] A docs page canonical points to its own docs URL
 - [x] A Godot API page canonical points to its own API URL
 - [x] No non-home page canonical points to the homepage
