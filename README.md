@@ -2,7 +2,7 @@
 
 <img alt="Folded Paper Engine Logo Icon 2025.svg" height="100" src="Assets/FPE/ID/Folded%20Paper%20Engine%20Logo%20Icon%202025.svg" title="FPE Logo" width="100"/>
 
-https://fpe.papercraft.games
+https://foldedpaperengine.com
 
 **Folded Paper Engine (FPE)** is a custom Blender-to-Godot addon that makes
 level and gameplay creation as easy as a few clicks!
