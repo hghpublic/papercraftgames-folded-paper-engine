@@ -16,9 +16,12 @@ export default defineConfig({
       serialize(item) {
         if (item.url === "https://foldedpaperengine.com/") {
           return {...item, url: "https://foldedpaperengine.com"};
+        } else {
+          return {
+            ...item,
+            url: `${item.url}.html`
+          };
         }
-
-        return item;
       }
     }),
   ],

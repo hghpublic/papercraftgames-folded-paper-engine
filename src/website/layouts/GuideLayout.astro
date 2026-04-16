@@ -1,7 +1,7 @@
 ---
 import SiteLayout from "./SiteLayout.astro";
 
-const {title} = Astro.props;
+const {title, hideGuideIndexBreadcrumb} = Astro.props;
 const isGuideIndex = Astro.url.pathname === "/docs/folded-paper-engine-guide" || Astro.url.pathname === "/docs/folded-paper-engine-guide.html";
 ---
 
@@ -14,20 +14,22 @@ const isGuideIndex = Astro.url.pathname === "/docs/folded-paper-engine-guide" ||
 
     <nav class="section section-breadcrumbs" aria-label="Breadcrumb">
         <a href="/">Home</a>
-        {!isGuideIndex && (
-            <>
-                <span>/</span>
-                <a href="/docs/folded-paper-engine-guide">Engine Guide</a>
-                <span>/</span>
-                <span aria-current="page">{title}</span>
-            </>
-        )}
-        {isGuideIndex && (
-            <>
-                <span>/</span>
-                <span aria-current="page">Engine Guide</span>
-            </>
-        )}
+      {!isGuideIndex && (
+              <>
+                  <span>/</span>
+                {!hideGuideIndexBreadcrumb ? (
+                        <a href="/docs/folded-paper-engine-guide.html">Engine Guide</a>
+                        <span>/</span>
+                ) : undefined}
+                  <span aria-current="page">{title}</span>
+              </>
+      )}
+      {isGuideIndex && (
+              <>
+                  <span>/</span>
+                  <span aria-current="page">Engine Guide</span>
+              </>
+      )}
     </nav>
 
     <slot/>

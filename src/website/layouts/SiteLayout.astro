@@ -112,7 +112,7 @@ const jsonLd = buildStructuredData({
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png"/>
     <meta name="apple-mobile-web-app-title" content="Folded Paper Engine"/>
     <link rel="manifest" href="/icons/site.webmanifest"/>
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}/>
 
     <link rel="stylesheet" href="/assets/css/index.css"/>
 
@@ -133,7 +133,7 @@ const jsonLd = buildStructuredData({
 
 <main>
     <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0;">
-        {primaryHeading}
+      {primaryHeading}
     </h1>
     <slot/>
 </main>
@@ -149,11 +149,11 @@ const jsonLd = buildStructuredData({
 
     <nav class="footer-nav" aria-label="Explore Folded Paper Engine">
         <a href="/">Home</a>
-        <a href="/blender-panel-docs">Blender Panels</a>
-        <a href="/godot-feature-docs">Godot Features</a>
-        <a href="/godot-api-docs">Godot API Docs</a>
-        <a href="/docs/folded-paper-engine-guide">Engine Guide</a>
-        <a href="/youtube-tutorials">Tutorials</a>
+        <a href="/blender-panel-docs.html">Blender Panels</a>
+        <a href="/godot-feature-docs.html">Godot Features</a>
+        <a href="/godot-api-docs.html">Godot API Docs</a>
+        <a href="/docs/folded-paper-engine-guide.html">Engine Guide</a>
+        <a href="/youtube-tutorials.html">Tutorials</a>
     </nav>
 
     <div class="social">
@@ -178,12 +178,12 @@ const jsonLd = buildStructuredData({
 <footer class="pickle-footer">
     <div>© {new Date().getFullYear()} Folded Paper Engine. All rights reserved.</div>
     <a
-      class="button medium"
-      href="https://github.com/sponsors/papercraftgames"
-      target="_blank"
-      rel="noopener noreferrer"
+            class="button medium"
+            href="https://github.com/sponsors/papercraftgames"
+            target="_blank"
+            rel="noopener noreferrer"
     >
-        <img class="sponsor-icon" src="/assets/images/top-hat.png" alt="Sponsor Top Hat" />
+        <img class="sponsor-icon" src="/assets/images/top-hat.png" alt="Sponsor Top Hat"/>
         Support FPE
     </a>
     <div class="pickle-box">
