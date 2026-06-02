@@ -6,8 +6,8 @@ const MAT_FALLBACK: ShaderMaterial = preload("res://addons/folded_paper_engine/E
 # Wobble/adopt shader (keeps target's look when it HAS a texture)
 const SH_WOBBLE: Shader = preload("res://addons/folded_paper_engine/Engine/Features/FX/Water/WaterAdopt.gdshader")
 
-func apply(node: Node3D, _data: Variant) -> void:
-	if node:
+func apply(node: Node3D, data: Variant) -> void:
+	if node and data:
 		if not node.is_inside_tree():
 			await node.ready
 		
