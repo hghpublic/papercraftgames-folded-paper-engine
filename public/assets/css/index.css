@@ -183,7 +183,7 @@ body {
     text-decoration: none;
     text-shadow: 0 0.08rem 0 rgba(255, 255, 255, 0.7);
     transform: translateY(0);
-    transition: transform 180ms ease, color 180ms ease, text-shadow 180ms ease;
+    transition: transform 220ms ease, color 220ms ease, text-shadow 220ms ease;
 }
 
 .header-nav a:nth-child(even) {
@@ -193,28 +193,20 @@ body {
 .header-nav a::before {
     content: "";
     position: absolute;
-    inset: 0.2rem -0.55rem 0.18rem;
+    inset: -0.34rem -0.95rem -0.42rem;
     border-radius: 999px;
     background:
-            radial-gradient(circle at 50% 58%, rgba(255, 255, 255, 0.95), rgba(255, 244, 206, 0.58) 54%, rgba(255, 193, 0, 0.12) 72%, transparent 73%);
+            radial-gradient(ellipse at 50% 58%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 244, 206, 0.46) 42%, rgba(255, 193, 0, 0.14) 61%, rgba(204, 57, 52, 0.08) 70%, transparent 82%);
     opacity: 0;
-    filter: blur(0.1rem);
-    transform: translateY(0.16rem) scale(0.72);
+    filter: blur(0.18rem);
+    transform: translateY(0.16rem) scale(0.68);
     transform-origin: center;
-    transition: opacity 180ms ease, transform 180ms ease;
+    transition: opacity 240ms ease, transform 240ms ease;
     z-index: -1;
 }
 
 .header-nav a::after {
-    content: "";
-    position: absolute;
-    inset: auto 24% 0.32rem;
-    height: 0.16rem;
-    border-radius: 999px;
-    background: var(--coral);
-    opacity: 0;
-    transform: translateY(0.12rem) scaleX(0.28);
-    transition: opacity 160ms ease, transform 160ms ease;
+    content: none;
 }
 
 .header-nav a:hover {
@@ -229,8 +221,7 @@ body {
 }
 
 .header-nav a:hover::after {
-    opacity: 0.78;
-    transform: translateY(0) scaleX(1);
+    content: none;
 }
 
 .dl-icon {
@@ -529,6 +520,7 @@ body {
 
         & a {
             position: relative;
+            isolation: isolate;
             padding: 0.55rem 0.18rem;
             border: 0;
             border-radius: 0;
@@ -538,18 +530,20 @@ body {
             font-size: clamp(1rem, 1.45vw, 1.28rem);
             font-weight: 400;
             text-shadow: none;
-            transition: transform 180ms ease, color 180ms ease, text-shadow 180ms ease;
+            transition: transform 220ms ease, color 220ms ease, text-shadow 220ms ease;
         }
 
         & a::after {
             content: "";
             position: absolute;
-            inset: 0.12rem -0.5rem 0;
+            inset: -0.34rem -0.95rem -0.42rem;
             border-radius: 999px;
-            background: radial-gradient(circle at 50% 60%, rgba(255, 255, 255, 0.72), rgba(255, 244, 206, 0.34) 56%, transparent 72%);
+            background: radial-gradient(ellipse at 50% 58%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 244, 206, 0.46) 42%, rgba(255, 193, 0, 0.14) 61%, rgba(204, 57, 52, 0.08) 70%, transparent 82%);
             opacity: 0;
-            transform: translateY(0.12rem) scale(0.76);
-            transition: opacity 180ms ease, transform 180ms ease;
+            filter: blur(0.18rem);
+            transform: translateY(0.16rem) scale(0.68);
+            transform-origin: center;
+            transition: opacity 240ms ease, transform 240ms ease;
             z-index: -1;
         }
 

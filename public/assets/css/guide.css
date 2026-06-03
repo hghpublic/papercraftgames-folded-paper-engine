@@ -301,11 +301,11 @@
     padding: 1rem;
     color: #fff;
     background-color: #25313a;
-    background-size: 108%;
+    background-size: 106%;
     background-position: center center;
     overflow: hidden;
     text-shadow: 0 0.14rem 0.45rem rgba(0, 0, 0, 0.58);
-    transition: background-size 280ms ease, filter 280ms ease;
+    transition: background-size 780ms cubic-bezier(0.16, 1, 0.3, 1), filter 520ms ease;
 }
 
 .doc-card-title::after {
@@ -345,7 +345,7 @@
 }
 
 .doc-card:hover > .doc-card-title {
-    background-size: 124%;
+    background-size: 156%;
     filter: saturate(1.08) contrast(1.03);
 }
 
