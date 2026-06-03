@@ -63,9 +63,8 @@
     justify-content: center;
     gap: 0.6em;
     font-family: 'ZCOOLKuaiLe-Regular', sans-serif;
-    background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0) 42%),
-            linear-gradient(135deg, var(--button-top-color), var(--button-bottom-color));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0) 42%),
+    linear-gradient(135deg, var(--button-top-color), var(--button-bottom-color));
     border-radius: 0.42rem;
     border: 1px solid rgba(255, 255, 255, 0.78);
     color: #fff;
@@ -116,10 +115,9 @@ button:focus-visible {
 
 html,
 body {
-    background:
-            linear-gradient(90deg, rgba(255, 193, 0, 0.08) 1px, transparent 1px),
-            linear-gradient(180deg, rgba(255, 193, 0, 0.06) 1px, transparent 1px),
-            var(--paper);
+    background: linear-gradient(90deg, rgba(255, 193, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 193, 0, 0.06) 1px, transparent 1px),
+    var(--paper);
     background-size: 44px 44px, 44px 44px, auto;
     color: var(--ink);
     font-family: 'ZCOOLKuaiLe-Regular', sans-serif;
@@ -195,8 +193,7 @@ body {
     position: absolute;
     inset: -0.34rem -0.95rem -0.42rem;
     border-radius: 999px;
-    background:
-            radial-gradient(ellipse at 50% 58%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 244, 206, 0.46) 42%, rgba(255, 193, 0, 0.14) 61%, rgba(204, 57, 52, 0.08) 70%, transparent 82%);
+    background: radial-gradient(ellipse at 50% 58%, rgba(255, 255, 255, 0.92) 0%, rgba(255, 244, 206, 0.46) 42%, rgba(255, 193, 0, 0.14) 61%, rgba(204, 57, 52, 0.08) 70%, transparent 82%);
     opacity: 0;
     filter: blur(0.18rem);
     transform: translateY(0.16rem) scale(0.68);
@@ -247,9 +244,8 @@ body {
     justify-content: center;
     align-items: center;
     padding: clamp(1.5rem, 4vw, 3rem);
-    background:
-            linear-gradient(135deg, rgba(159, 184, 55, 0.18), rgba(120, 168, 194, 0.16)),
-            var(--cream);
+    background: linear-gradient(135deg, rgba(159, 184, 55, 0.18), rgba(120, 168, 194, 0.16)),
+    var(--cream);
 
     & > .web-splash-inner {
         position: relative;
@@ -345,15 +341,21 @@ body {
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 250, 240, 0)),
-            var(--sun);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 250, 240, 0)),
+    var(--sun);
     padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 6vw, 6rem) 0;
 
     &.top-section {
-        background:
-                radial-gradient(circle at 10% 0%, rgba(255, 193, 0, 0.22), transparent 24rem),
-                linear-gradient(180deg, rgba(255, 250, 240, 0.98), rgba(255, 244, 206, 0.88) 46%, rgba(255, 255, 255, 0.8) 100%);
+        background: radial-gradient(circle at 10% 0%, rgba(255, 193, 0, 0.22), transparent 24rem),
+        linear-gradient(180deg, rgba(255, 250, 240, 0.98), rgba(255, 244, 206, 0.88) 46%, rgba(255, 255, 255, 0.8) 100%);
+    }
+
+    &.content-section {
+        padding-top: 0.5em;
+
+        header {
+            margin-bottom: 5em;
+        }
     }
 
     header {
@@ -378,14 +380,22 @@ body {
             max-width: 15%;
         }
 
+        &.no-margin {
+            margin: 0;
+        }
+
         .section-title {
-            font-size: clamp(2.4rem, 5vw, 4.6rem);
+            font-size: clamp(2.4rem, 5vw, 3.2rem);
             color: var(--ink);
             line-height: 1.02;
             text-shadow: none;
 
+            &.no-margin {
+                margin: 0;
+            }
+
             .section-subtitle {
-                font-size: 0.5em;
+                font-size: 0.75em;
             }
         }
     }
@@ -475,8 +485,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background:
-            linear-gradient(180deg, rgba(255, 250, 240, 0.98) 0%, rgba(255, 193, 0, 0.44) 48%, rgba(190, 211, 111, 0.48) 100%);
+    background: linear-gradient(180deg, rgba(255, 250, 240, 0.98) 0%, rgba(255, 193, 0, 0.44) 48%, rgba(190, 211, 111, 0.48) 100%);
     margin-top: 0;
     padding: clamp(2rem, 5vw, 4rem) 2rem;
     gap: 2rem;
@@ -690,10 +699,9 @@ body {
     gap: clamp(2rem, 5vw, 5rem);
     align-items: center;
     padding: clamp(3rem, 7vw, 6rem) clamp(1.25rem, 5vw, 6rem) clamp(2rem, 5vw, 4rem);
-    background:
-            radial-gradient(circle at 12% 18%, rgba(255, 193, 0, 0.32), transparent 28rem),
-            linear-gradient(135deg, rgba(255, 193, 0, 0.22), rgba(159, 184, 55, 0.16) 45%, rgba(76, 115, 121, 0.22)),
-            var(--paper);
+    background: radial-gradient(circle at 12% 18%, rgba(255, 193, 0, 0.32), transparent 28rem),
+    linear-gradient(135deg, rgba(255, 193, 0, 0.22), rgba(159, 184, 55, 0.16) 45%, rgba(76, 115, 121, 0.22)),
+    var(--paper);
 }
 
 .home-hero-copy {
@@ -795,8 +803,7 @@ body {
 }
 
 .docs-hub {
-    background:
-            linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
 }
 
 .doc-grid,
@@ -815,9 +822,8 @@ body {
 .doc-card,
 .feature-grid article,
 .workflow-steps article {
-    background:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 244, 206, 0.62)),
-            var(--paper-strong);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 244, 206, 0.62)),
+    var(--paper-strong);
     border: 1px solid rgba(37, 49, 58, 0.12);
     border-radius: 0.5rem;
     box-shadow: 0 0.85rem 2rem rgba(37, 49, 58, 0.1);
@@ -865,8 +871,7 @@ body {
 }
 
 .workflow-section {
-    background:
-            linear-gradient(180deg, #fff 0%, #fffaf0 100%);
+    background: linear-gradient(180deg, #fff 0%, #fffaf0 100%);
 }
 
 .workflow-steps {
@@ -901,9 +906,8 @@ body {
 }
 
 .feature-section {
-    background:
-            linear-gradient(135deg, rgba(159, 184, 55, 0.16), rgba(120, 168, 194, 0.12)),
-            #f3faf7;
+    background: linear-gradient(135deg, rgba(159, 184, 55, 0.16), rgba(120, 168, 194, 0.12)),
+    #f3faf7;
 }
 
 .feature-grid {
@@ -923,9 +927,8 @@ body {
     grid-template-columns: minmax(0, 1fr) minmax(14rem, 24rem);
     gap: clamp(2rem, 6vw, 5rem);
     align-items: center;
-    background:
-            linear-gradient(135deg, rgba(76, 115, 121, 0.48), transparent 42%),
-            var(--ink);
+    background: linear-gradient(135deg, rgba(76, 115, 121, 0.48), transparent 42%),
+    var(--ink);
 }
 
 .audience-section h2,
@@ -954,9 +957,8 @@ body {
     grid-template-columns: auto minmax(0, 1fr);
     gap: 1rem 2rem;
     align-items: center;
-    background:
-            linear-gradient(135deg, rgba(255, 193, 0, 0.28), rgba(204, 57, 52, 0.12)),
-            #ffffff;
+    background: linear-gradient(135deg, rgba(255, 193, 0, 0.28), rgba(204, 57, 52, 0.12)),
+    #ffffff;
 }
 
 /* Demo Page */
@@ -965,9 +967,8 @@ body {
     display: grid;
     gap: clamp(1.5rem, 4vw, 2.5rem);
     padding: clamp(2.5rem, 6vw, 5rem) clamp(1.25rem, 5vw, 6rem);
-    background:
-            radial-gradient(circle at 18% 8%, rgba(255, 193, 0, 0.28), transparent 24rem),
-            linear-gradient(135deg, rgba(255, 250, 240, 0.98), rgba(159, 184, 55, 0.14), rgba(120, 168, 194, 0.12));
+    background: radial-gradient(circle at 18% 8%, rgba(255, 193, 0, 0.28), transparent 24rem),
+    linear-gradient(135deg, rgba(255, 250, 240, 0.98), rgba(159, 184, 55, 0.14), rgba(120, 168, 194, 0.12));
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
@@ -1003,12 +1004,11 @@ body {
     overflow: hidden;
     border: 0.55rem solid #fff;
     border-radius: 0.75rem;
-    background:
-            repeating-linear-gradient(
-                    45deg,
-                    #9fb837 0 16px,
-                    #b9d94a 16px 32px
-            );
+    background: repeating-linear-gradient(
+            45deg,
+            #9fb837 0 16px,
+            #b9d94a 16px 32px
+    );
     box-shadow: var(--surface-shadow);
 }
 

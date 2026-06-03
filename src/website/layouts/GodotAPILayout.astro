@@ -1,7 +1,7 @@
 ---
 import SiteLayout from "./SiteLayout.astro";
 
-const {title} = Astro.props;
+const {title, hideSubTitle} = Astro.props;
 const apiIndexLabel = "Godot Addon API Docs";
 const isApiIndex =
   Astro.url.pathname === "/godot-api-docs" ||
@@ -19,17 +19,17 @@ const showCurrentApiCrumb = title && title !== apiIndexLabel;
     <nav class="section section-breadcrumbs" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span>/</span>
-        {isApiIndex ? (
-            <span aria-current="page">{apiIndexLabel}</span>
-        ) : (
-            <a href="/godot-api-docs.html">Godot API Docs</a>
-        )}
-        {showCurrentApiCrumb && (
-            <>
-                <span>/</span>
-                <span aria-current="page">{title}</span>
-            </>
-        )}
+      {isApiIndex ? (
+              <span aria-current="page">{apiIndexLabel}</span>
+      ) : (
+              <a href="/godot-api-docs.html">Godot API Docs</a>
+      )}
+      {showCurrentApiCrumb && (
+              <>
+                  <span>/</span>
+                  <span aria-current="page">{title}</span>
+              </>
+      )}
     </nav>
 
     <section class="web-splash">
@@ -43,7 +43,7 @@ const showCurrentApiCrumb = title && title !== apiIndexLabel;
     </section>
 
     <section class="section top-section">
-        <header>
+        <header class="no-margin">
             <div class="section-title">
                 Godot Addon API Docs
             </div>
@@ -53,9 +53,13 @@ const showCurrentApiCrumb = title && title !== apiIndexLabel;
     <section class="section content-section">
       {title && (
               <header>
-                  <h1 class="section-title">
-                    {title}
-                  </h1>
+                {!hideSubTitle && (
+                        <h1 class="section-title no-margin">
+                      <span class="section-subtitle">
+                        {title}
+                      </span>
+                        </h1>
+                )}
               </header>
       )}
         <main>
