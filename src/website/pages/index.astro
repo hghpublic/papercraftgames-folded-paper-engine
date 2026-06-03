@@ -7,170 +7,179 @@ import FeaturedOnGameFromScratch from "../components/index/FeaturedOnGameFromScr
         title="Home"
         description="Folded Paper Engine: Blender-to-Godot addon that reduces boilerplate when creating game levels. Tag gameplay in Blender, export standard GLTF, import to Godot with functionality auto-wired."
 >
-    <Fragment slot="head">
-        <script type="module" src="/assets/js/index.js" is:inline></script>
-    </Fragment>
+    <section class="home-hero" aria-labelledby="home-hero-title">
+        <div class="home-hero-copy">
+            <p class="eyebrow">Blender-to-Godot level authoring</p>
+            <h2 id="home-hero-title">Folded Paper Engine</h2>
+            <p class="hero-lede">
+                Tag gameplay in Blender, export standard GLTF, and let Godot wire the repetitive setup for players,
+                triggers, speakers, inventory items, scene metadata, and more.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+                <a class="button blue blender-download"
+                   href="https://github.com/papercraftgames/folded-paper-engine/releases/latest/download/folded_paper_engine_blender.zip">
+                    Download for Blender 4.4+
+                    <img class="button-icon" src="/assets/images/blender-logo-icon.png" alt="">
+                </a>
+                <a class="button godot-download"
+                   href="https://github.com/papercraftgames/folded-paper-engine/releases/latest/download/folded_paper_engine_godot.zip">
+                    Download for Godot 4.4+
+                    <img class="button-icon" src="/assets/images/godot-logo-icon.png" alt="">
+                </a>
+            </div>
+            <div class="hero-links" aria-label="Documentation shortcuts">
+                <a href="/docs/folded-paper-engine-guide.html">Engine guide</a>
+                <a href="/blender-panel-docs.html">Blender panels</a>
+                <a href="/godot-feature-docs.html">Godot features</a>
+            </div>
+        </div>
 
-    <section
-            class="web-splash"
-    >
-        <div
-                class="web-splash-inner base-background"
-        >
-            <img class="web-splash-img index-web-splash" src="/assets/images/web-splash.png" alt="Splash">
-            <img class="apple-sticker" src="/assets/images/apple-sticker.png" alt="Apple Sticker">
-            <img class="star-sticker" src="/assets/images/splash-star.png" alt="Star Sticker">
-            <button class="demo-button button red">
-                Play the Demo!
-                <img class="button-icon" src="/assets/images/mug-icon.png" alt="A latte in a small, white coffee mug">
-            </button>
+        <div class="hero-stage">
+            <div class="web-splash">
+                <div class="web-splash-inner base-background">
+                    <img class="web-splash-img index-web-splash" src="/assets/images/web-splash.png" alt="Folded Paper Engine demo scene preview">
+                    <img class="apple-sticker" src="/assets/images/apple-sticker.png" alt="">
+                    <img class="star-sticker" src="/assets/images/splash-star.png" alt="">
+                    <a class="demo-button button red" href="/demo.html">
+                        Play the Demo
+                        <img class="button-icon" src="/assets/images/mug-icon.png" alt="">
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     <FeaturedOnGameFromScratch/>
-    <section
-            class="section top-section"
-    >
-        <header>
-            <img class="title-graphic" src="/assets/images/doc-owl.png" alt="A brown owl holding a document">
-            <div
-                    class="section-title"
-            >
-                Get Wise!
-                <div class="section-subtitle">
-                    Docs & More...
-                </div>
+
+    <section class="home-section docs-hub" aria-labelledby="docs-title">
+        <div class="section-heading">
+            <img src="/assets/images/doc-owl.png" alt="">
+            <div>
+                <p class="eyebrow">Learn the toolchain</p>
+                <h2 id="docs-title">Start where you work</h2>
             </div>
-        </header>
-        <main>
-            <a class="button" href="/blender-panel-docs.html">
-                Blender Panels
-                <img class="button-icon" src="/assets/images/blender-logo-icon.png" alt="Blender Logo">
+        </div>
+        <div class="doc-grid">
+            <a class="doc-card" href="/blender-panel-docs.html">
+                <img src="/assets/images/blender-logo-icon.png" alt="">
+                <span>Blender Panels</span>
+                <small>Author gameplay metadata where your level already lives.</small>
             </a>
-            <div
-                    class="stack"
-            >
-                <a class="button" href="/godot-feature-docs.html">
-                    Godot Features
-                    <img class="button-icon" src="/assets/images/godot-logo-icon.png" alt="Godot Logo">
-                </a>
-                <a class="stack-link" href="/godot-api-docs.html">
-                    Godot API
-                </a>
-            </div>
-            <a class="button" href="/youtube-tutorials.html">
-                Tutorials
-                <img class="button-icon" src="/assets/images/youtube-logo-small.png" alt="YouTube Logo">
+            <a class="doc-card" href="/godot-feature-docs.html">
+                <img src="/assets/images/godot-logo-icon.png" alt="">
+                <span>Godot Features</span>
+                <small>See how imported scene data becomes runtime behavior.</small>
             </a>
-            <a class="button" href="/docs/folded-paper-engine-guide.html">
-                Engine Guide
-                <img class="button-icon" src="/assets/images/guide-icon.png" alt="Folded Paper Engine guide owl">
+            <a class="doc-card" href="/godot-api-docs.html">
+                <img src="/assets/images/guide-icon.png" alt="">
+                <span>Godot API</span>
+                <small>Reference the scripts and extension points behind FPE.</small>
             </a>
-        </main>
-    </section>
-    <section class="section intro-section">
-        <div class="intro-content">
-            <h2>What is Folded Paper Engine?</h2>
-            <p>
-                Folded Paper Engine (FPE) is a Blender-to-Godot addon that dramatically reduces boilerplate setup when
-                creating game levels. Define gameplay properties and behaviors directly in Blender using custom panels,
-                then export as standard GLTF. When imported into Godot, FPE's addon automatically wires up the
-                functionality based on your tagged properties.
-            </p>
-            <p>
-                <strong>Work the way that makes sense to you.</strong> Artists can build interactive levels without
-                touching code. Programmers can use FPE to handle the repetitive setup, then extend everything with
-                custom scripts. FPE provides the foundation and gets out of your way.
-            </p>
-
-            <h3>Who is FPE for?</h3>
-            <ul>
-                <li><strong>Artists and designers</strong> who want to prototype interactive scenes quickly</li>
-                <li><strong>Solo developers</strong> who want to spend less time on boilerplate and more time on
-                    gameplay
-                </li>
-                <li><strong>Teams</strong> where level designers work in Blender and need a clean handoff to Godot</li>
-                <li><strong>Anyone</strong> who's tired of manually setting up triggers, collision, audio, and scene
-                    metadata for every level
-                </li>
-            </ul>
-
-            <h3>How it works</h3>
-            <ol>
-                <li><strong>Tag objects in Blender</strong> – Use FPE's custom panels to mark objects as Players,
-                    Triggers, Speakers, Holdable Items, and configure their properties
-                </li>
-                <li><strong>Export standard GLTF</strong> – FPE embeds your custom properties into the GLTF file using
-                    Godot's existing import system
-                </li>
-                <li><strong>Import to Godot</strong> – Add the FoldedPaperEngine node, assign your GLTF file, and FPE's
-                    modular system automatically enhances the imported nodes with the behaviors you defined
-                </li>
-            </ol>
-            <p>No custom file formats. No reinvented wheels. Just standard GLTF with smart automation on the Godot
-                side.</p>
-
-            <h3>Key Features</h3>
-            <p>FPE provides structured Blender panels for defining:</p>
-            <ul>
-                <li><strong>Characters & Players</strong> – Rigs, NPCs, camera behavior</li>
-                <li><strong>Triggers & Events</strong> – Area triggers, command catalogs, automation</li>
-                <li><strong>Physics & Interaction</strong> – Holdable items, inventory, rigid bodies</li>
-                <li><strong>Scene Management</strong> – Sky color, sub-scenes, level loading, animation frame events
-                </li>
-                <li><strong>Audio</strong> – Music imports, autoplay, looping, background tracks</li>
-            </ul>
-
-            <h3>Scales with your needs</h3>
-            <p>
-                Start simple with no-code interactive scenes. When you need more control, FPE provides escape hatches at
-                every level:
-            </p>
-            <ul>
-                <li>Override any auto-generated behavior with custom scripts</li>
-                <li>Extend FPE's mod system with your own gameplay modules</li>
-                <li>Use FPE for the tedious parts, code the unique parts yourself</li>
-            </ul>
-            <p>FPE handles the repetitive setup so you can focus on what makes your game special.</p>
+            <a class="doc-card" href="/youtube-tutorials.html">
+                <img src="/assets/images/youtube-logo-small.png" alt="">
+                <span>Tutorials</span>
+                <small>Follow guided videos for practical Blender-to-Godot workflows.</small>
+            </a>
         </div>
     </section>
-    <section
-            id="download"
-            class="section"
-    >
-        <header class="flipped">
-            <img class="title-graphic" src="/assets/images/dl-backpack.png" alt="A red backpack">
-            <div
-                    class="section-title"
-            >
-                Pack for Your Adventure...
-                <div class="section-subtitle">
-                    Download Now!
-                </div>
+
+    <section class="home-section workflow-section" aria-labelledby="workflow-title">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">A standard export, made smarter</p>
+                <h2 id="workflow-title">Three steps from scene art to playable setup</h2>
             </div>
-        </header>
-        <main>
+        </div>
+        <div class="workflow-steps">
+            <article>
+                <span>01</span>
+                <h3>Tag objects in Blender</h3>
+                <p>Use FPE panels to mark Players, Triggers, Speakers, Holdable Items, and scene settings.</p>
+            </article>
+            <article>
+                <span>02</span>
+                <h3>Export standard GLTF</h3>
+                <p>FPE carries custom properties through Blender's existing GLTF pipeline without a custom format.</p>
+            </article>
+            <article>
+                <span>03</span>
+                <h3>Import to Godot</h3>
+                <p>Add the FoldedPaperEngine node and let the addon enhance imported nodes with the behaviors you tagged.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="home-section feature-section" aria-labelledby="feature-title">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">Built for repeated level work</p>
+                <h2 id="feature-title">Less boilerplate between your scene and your game</h2>
+            </div>
+        </div>
+        <div class="feature-grid">
+            <article>
+                <h3>Characters & Players</h3>
+                <p>Configure rigs, NPCs, camera behavior, and player-facing metadata directly on scene objects.</p>
+            </article>
+            <article>
+                <h3>Triggers & Events</h3>
+                <p>Define area triggers, command catalogs, scene events, and animation frame events in the authoring file.</p>
+            </article>
+            <article>
+                <h3>Physics & Interaction</h3>
+                <p>Mark holdable items, inventory objects, rigid bodies, and collider behavior before export.</p>
+            </article>
+            <article>
+                <h3>Scene Management</h3>
+                <p>Carry sky color, sub-scenes, loading behavior, UI elements, and scene metadata into Godot.</p>
+            </article>
+            <article>
+                <h3>Audio</h3>
+                <p>Set up music imports, looping, autoplay, background tracks, and speakers as part of level authoring.</p>
+            </article>
+            <article>
+                <h3>Escape Hatches</h3>
+                <p>Override generated behavior, add custom scripts, or extend FPE's modular runtime when a scene needs more.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="home-section audience-section" aria-labelledby="audience-title">
+        <div class="audience-copy">
+            <p class="eyebrow">For artists, designers, solo developers, and teams</p>
+            <h2 id="audience-title">Prototype faster without locking programmers out</h2>
+            <p>
+                Artists can build interactive scenes without touching code. Programmers can rely on FPE for repetitive
+                setup, then customize the unique parts. Teams get a cleaner handoff from Blender-authored levels to the
+                Godot runtime.
+            </p>
+        </div>
+        <img src="/assets/images/guide-splash.png" alt="Folded Paper Engine guide artwork">
+    </section>
+
+    <section id="download" class="home-section download-section" aria-labelledby="download-title">
+        <img src="/assets/images/dl-backpack.png" alt="">
+        <div>
+            <p class="eyebrow">Pack for your adventure</p>
+            <h2 id="download-title">Download Folded Paper Engine</h2>
+            <p>Install both sides of the workflow: Blender authoring panels and the Godot runtime addon.</p>
+        </div>
+        <div class="download-actions">
             <a class="button blue blender-download"
                href="https://github.com/papercraftgames/folded-paper-engine/releases/latest/download/folded_paper_engine_blender.zip">
                 Download for Blender 4.4+
-                <img class="button-icon" src="/assets/images/blender-logo-icon.png" alt="Blender Logo">
+                <img class="button-icon" src="/assets/images/blender-logo-icon.png" alt="">
             </a>
             <a class="button blue godot-download"
                href="https://github.com/papercraftgames/folded-paper-engine/releases/latest/download/folded_paper_engine_godot.zip">
                 Download for Godot 4.4+
-                <img class="button-icon" src="/assets/images/godot-logo-icon.png" alt="Godot Logo">
+                <img class="button-icon" src="/assets/images/godot-logo-icon.png" alt="">
             </a>
-        </main>
-        <div class="spacer section-spacer"></div>
-        <main>
-            <div class="stack">
-                <a
-                        class="button stack-link"
-                        href="https://github.com/papercraftgames/folded-paper-engine/releases"
-                        target="_blank"
-                >
-                    Previous Versions
-                </a>
-            </div>
-        </main>
+            <a class="previous-versions"
+               href="https://github.com/papercraftgames/folded-paper-engine/releases"
+               target="_blank"
+               rel="noopener noreferrer">
+                Previous versions
+            </a>
+        </div>
     </section>
 </SiteLayout>

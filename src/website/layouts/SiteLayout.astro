@@ -60,25 +60,23 @@ const jsonLd = buildStructuredData({
           });
         });
 
-        const blenderDownloadButton = document.querySelector(".blender-download");
-        if (blenderDownloadButton) {
+        document.querySelectorAll(".blender-download").forEach((blenderDownloadButton) => {
           blenderDownloadButton.addEventListener("click", () => {
             gtag('event', 'download_blender', {
               event_category: 'download',
               event_label: 'blender_plugin'
             });
           });
-        }
+        });
 
-        const godotDownloadButton = document.querySelector(".godot-download");
-        if (godotDownloadButton) {
+        document.querySelectorAll(".godot-download").forEach((godotDownloadButton) => {
           godotDownloadButton.addEventListener("click", () => {
             gtag('event', 'download_godot', {
               event_category: 'download',
               event_label: 'godot_plugin'
             });
           });
-        }
+        });
       });
     </script>
 
@@ -124,6 +122,13 @@ const jsonLd = buildStructuredData({
     <a href="/">
         <img class="logo" src="/assets/images/logo.png" alt="Folded Paper Engine logo"/>
     </a>
+    <nav class="header-nav" aria-label="Primary navigation">
+        <a href="/docs/folded-paper-engine-guide.html">Guide</a>
+        <a href="/blender-panel-docs.html">Blender</a>
+        <a href="/godot-feature-docs.html">Godot</a>
+        <a href="/godot-api-docs.html">API</a>
+        <a href="/youtube-tutorials.html">Tutorials</a>
+    </nav>
     <div class="spacer"></div>
     <a class="button" href="/#download">
         Download
