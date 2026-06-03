@@ -46,22 +46,15 @@ const showCurrentApiCrumb = title && title !== apiIndexLabel;
         <header class="no-margin">
             <div class="section-title">
                 Godot Addon API Docs
+              {title && !hideSubTitle && (
+                      <div class="section-subtitle">
+                        {title}
+                      </div>
+              )}
             </div>
         </header>
-    </section>
-
-    <section class="section content-section">
-      {title && (
-              <header>
-                {!hideSubTitle && (
-                        <h1 class="section-title no-margin">
-                      <span class="section-subtitle">
-                        {title}
-                      </span>
-                        </h1>
-                )}
-              </header>
-      )}
+        <br/>
+        <br/>
         <main>
             <slot/>
         </main>
