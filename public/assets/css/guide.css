@@ -226,3 +226,199 @@
 .coverage-map li + li {
     margin-top: 0.35rem;
 }
+
+/* Full-site polish pass */
+
+.section > .section-body {
+    max-width: 76rem;
+    width: min(100%, 76rem);
+    margin: 0 auto 4em;
+    color: var(--ink);
+}
+
+.guide-section > .section-body,
+.section > .section-body.doc-tiles {
+    background: transparent;
+    align-items: center;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+.guide-intro {
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border: 1px solid var(--hairline);
+    border-radius: 0.38rem;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--surface-shadow);
+}
+
+.doc-grid {
+    width: 100%;
+    max-width: 76rem;
+    gap: clamp(1.1rem, 2.2vw, 1.6rem);
+    padding: 0;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.doc-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    height: 100%;
+    border: 1px solid rgba(37, 49, 58, 0.14);
+    border-radius: 0.42rem;
+    background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(255, 244, 206, 0.72)),
+            #fff;
+    box-shadow: 0 0.7rem 1.55rem rgba(37, 49, 58, 0.11), inset 0 1px 0 rgba(255, 255, 255, 0.72);
+    isolation: isolate;
+    transform-origin: center;
+}
+
+.doc-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.doc-card:hover,
+.doc-card:focus-visible {
+    transform: translateY(-0.24rem);
+    border-color: rgba(204, 57, 52, 0.4);
+    box-shadow: 0 1rem 2.2rem rgba(37, 49, 58, 0.16), 0 0 0 0.14rem rgba(255, 193, 0, 0.13);
+}
+
+.doc-card-title {
+    position: relative;
+    flex: 0 0 auto;
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    height: auto;
+    padding: 1rem;
+    color: #fff;
+    background-color: #25313a;
+    background-size: 106%;
+    background-position: center center;
+    overflow: hidden;
+    text-shadow: 0 0.14rem 0.45rem rgba(0, 0, 0, 0.58);
+    transition: background-size 780ms cubic-bezier(0.16, 1, 0.3, 1), filter 520ms ease;
+}
+
+.doc-card-title::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            linear-gradient(180deg, rgba(37, 49, 58, 0.04), rgba(37, 49, 58, 0.78)),
+            linear-gradient(135deg, rgba(255, 193, 0, 0.22), rgba(76, 115, 121, 0.12));
+    pointer-events: none;
+    z-index: 0;
+}
+
+.doc-card-title > * {
+    position: relative;
+    z-index: 1;
+}
+
+.doc-card-title::before {
+    content: none;
+}
+
+.doc-card-body {
+    flex: 1 1 auto;
+    min-height: 6.5rem;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color: var(--ink);
+    background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 244, 206, 0.82)),
+            #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.98rem;
+    font-weight: 650;
+    line-height: 1.45;
+    border-top: 1px solid rgba(37, 49, 58, 0.08);
+}
+
+.doc-card:hover > .doc-card-title {
+    background-size: 156%;
+    filter: saturate(1.08) contrast(1.03);
+}
+
+.doc-card:hover > .doc-card-title::before {
+    left: auto;
+}
+
+.coverage-map,
+.section > .section-body .doc-column {
+    border: 1px solid var(--hairline);
+    border-radius: 0.38rem;
+    background:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 244, 206, 0.62)),
+            #fff;
+    box-shadow: 0 0.85rem 2rem rgba(37, 49, 58, 0.1);
+}
+
+.coverage-map h3,
+.guide-group h2,
+.section > .section-body .doc-column h3 {
+    color: var(--ink);
+    font-family: 'ZCOOLKuaiLe-Regular', sans-serif;
+    line-height: 1.08;
+}
+
+.video-box {
+    aspect-ratio: 16 / 9;
+    background: var(--ink);
+}
+
+.video-box iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (max-width: 599px) {
+    .section > .section-body {
+        width: 100%;
+        padding-inline: 1rem;
+        font-size: 1rem;
+    }
+
+    .doc-grid {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .doc-card {
+        width: 100%;
+        max-width: 32rem;
+    }
+
+    .doc-card-title {
+        aspect-ratio: 16 / 9;
+        padding: 0.85rem;
+        font-size: 1.05rem;
+    }
+
+    .doc-card-body {
+        min-height: auto;
+        padding: 0.9rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+    .section > .section-body.doc-tiles {
+        padding-inline: clamp(1rem, 4vw, 2rem);
+    }
+
+    .doc-card-body {
+        min-height: 7.25rem;
+    }
+}

@@ -33,6 +33,11 @@ function toExpectedCanonical(filePath: string): string {
 }
 
 function assertCanonical(filePath: string): void {
+  const normalizedRelativePath = Path.relative(DIST_ROOT, filePath).replace(/\\/g, "/");
+  if (normalizedRelativePath.startsWith("demo-game/")) {
+    return;
+  }
+
   const canonical = readCanonical(filePath);
   const expectedCanonical = toExpectedCanonical(filePath);
   const relativePath = Path.relative(DIST_ROOT, filePath);

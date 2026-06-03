@@ -1,0 +1,50 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+---
+
+<SiteLayout
+        title="Playable Demo"
+        description="Play the Folded Paper Engine browser demo and see the Blender-to-Godot workflow in action."
+>
+    <Fragment slot="head">
+        <script type="module" src="/assets/js/demo.js" is:inline></script>
+    </Fragment>
+
+    <section class="demo-page" aria-labelledby="demo-title">
+        <div class="demo-copy">
+            <p class="eyebrow">Playable browser demo</p>
+            <h2 id="demo-title">Step into the scene</h2>
+            <p>
+                This demo loads the Godot web export directly in the page. The first load can take a moment while the
+                engine, game package, and WebAssembly runtime are fetched.
+            </p>
+        </div>
+
+        <section class="demo-shell" aria-label="Folded Paper Engine demo">
+            <div class="demo-game-frame" data-demo-frame>
+                <img class="web-splash-img" src="/assets/images/web-splash.png" alt="Folded Paper Engine demo preview">
+                <div class="demo-loader" data-demo-loader>
+                    <img src="/assets/images/mug-icon.png" alt="">
+                    <div>
+                        <p class="demo-loader-kicker">Preparing demo</p>
+                        <h3 data-demo-status>Checking game export...</h3>
+                    </div>
+                    <div class="demo-progress" aria-label="Demo loading progress">
+                        <span data-demo-progress></span>
+                    </div>
+                    <p class="demo-loader-detail" data-demo-detail>
+                        Looking for the local Godot web build in <code>/demo-game/</code>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="demo-controls">
+                <button class="button blue" type="button" data-demo-fullscreen disabled>
+                    Full Screen
+                    <img class="button-icon" src="/assets/images/dl-icon.png" alt="">
+                </button>
+                <a class="previous-versions" href="/">Back to home</a>
+            </div>
+        </section>
+    </section>
+</SiteLayout>
