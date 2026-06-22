@@ -1,5 +1,18 @@
 # Codex Plan: FPE SEO Content Patch
 
+## Progress
+
+- [x] 1. Homepage metadata updated to lead with “Instant Game Mechanics.”
+- [x] 2. Homepage hero copy updated without redesigning the hero.
+- [x] 3. Homepage explanatory block added after the three-step workflow section.
+- [x] 4. Homepage support CTA context sentence added while preserving donation CTAs.
+- [x] 5. Main page metadata and small intro/context sentences updated for Blender Panels, Godot Features, Godot API, Tutorials, and Demo.
+- [x] 6. Footer/internal link pass added with a Core Concepts link group and homepage anchor.
+- [x] 7. Keyword placement checklist verified against rendered HTML.
+- [~] 8. Technical checks completed: `yarn build:web`, canonical validation, rendered metadata inspection, support CTA inspection, and local link check passed. Visual browser inspection remains unverified because the in-app browser endpoint was unavailable in this session.
+- [x] 9. Acceptance criteria satisfied for homepage metadata, visible homepage positioning, explanatory block, main page metadata, and small useful context additions.
+- [x] Follow-up: YouTube tutorials intro sentence spacing corrected with a constrained desktop layout.
+
 ## Core Idea
 
 Folded Paper Engine is:

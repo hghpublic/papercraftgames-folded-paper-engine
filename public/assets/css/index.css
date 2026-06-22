@@ -1054,6 +1054,41 @@ body {
     margin: 0;
 }
 
+.mechanics-section {
+    background: #fffaf0;
+}
+
+.mechanics-copy {
+    max-width: 68rem;
+    margin: 0 auto;
+}
+
+.mechanics-copy p {
+    max-width: 58rem;
+    margin: 1rem 0 0;
+    color: var(--muted-ink);
+    font-size: clamp(1.05rem, 2vw, 1.22rem);
+    line-height: 1.6;
+}
+
+.mechanics-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.15rem;
+    margin-top: 1.35rem;
+}
+
+.mechanics-links a {
+    color: var(--teal);
+    font-weight: 800;
+    text-decoration-color: rgba(76, 115, 121, 0.35);
+    text-underline-offset: 0.22em;
+}
+
+.mechanics-links a:hover {
+    color: var(--coral);
+}
+
 .feature-section {
     background: linear-gradient(135deg, rgba(159, 184, 55, 0.16), rgba(120, 168, 194, 0.12)),
     #f3faf7;

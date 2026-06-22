@@ -6,7 +6,8 @@ const {docsHtml, legendHtml} = await getBlenderPanelDocsHTML();
 ---
 
 <SiteLayout
-        title="Blender Panels"
+        title="Blender Game Logic Panels"
+        description="Use Folded Paper Engine's Blender game logic panels to tag players, triggers, physics objects, speakers, inventory items, scene settings, animation events, and Godot-ready gameplay metadata."
 >
     <Fragment slot="head">
         <link rel="stylesheet" href="/assets/css/docs.css"/>
@@ -32,6 +33,11 @@ const {docsHtml, legendHtml} = await getBlenderPanelDocsHTML();
             </div>
         </header>
         <main>
+            <p>
+                These Blender game logic panels let you define gameplay metadata before export, so Godot can turn tagged
+                objects into runtime game mechanics.
+            </p>
+
             <h3>Install the Blender Addon to get started:</h3>
             <ol>
                 <li>Go to <code>Edit &gt; Preferences &gt; Add-ons</code> and click the down arrow
