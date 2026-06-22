@@ -1,6 +1,13 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import FeaturedOnGameFromScratch from "../components/index/FeaturedOnGameFromScratch.astro";
+
+const supportUrls = {
+    kofiHome: "https://ko-fi.com/papercraftgames?utm_source=fpe_site&utm_medium=home_support_section&utm_campaign=fpe_support",
+    githubHome: "https://github.com/sponsors/papercraftgames?utm_source=fpe_site&utm_medium=home_support_section&utm_campaign=fpe_support",
+    kofiDownload: "https://ko-fi.com/papercraftgames?utm_source=fpe_site&utm_medium=download_section&utm_campaign=fpe_support",
+    githubDownload: "https://github.com/sponsors/papercraftgames?utm_source=fpe_site&utm_medium=download_section&utm_campaign=fpe_support",
+};
 ---
 
 <SiteLayout
@@ -49,6 +56,35 @@ import FeaturedOnGameFromScratch from "../components/index/FeaturedOnGameFromScr
         </div>
     </section>
     <FeaturedOnGameFromScratch/>
+
+    <section class="home-section support-section" aria-labelledby="support-title">
+        <div class="support-card">
+            <div class="section-heading support-heading">
+                <img src="/assets/images/mug-icon.png" alt="">
+                <div>
+                    <p class="eyebrow">Fund ongoing FPE development</p>
+                    <h2 id="support-title">Help Keep FPE Free</h2>
+                </div>
+            </div>
+            <p class="support-card-body">
+                Folded Paper Engine stays free, open-source, and MIT licensed. Support helps fund ongoing maintenance,
+                docs, tutorials, sample projects, and the first official showcase game.
+            </p>
+            <div class="support-actions">
+                <a class="button gold" href={supportUrls.kofiHome} target="_blank" rel="noopener noreferrer">
+                    Support FPE
+                    <img class="button-icon" src="/assets/images/mug-icon.png" alt="">
+                </a>
+                <a class="button blue" href={supportUrls.githubHome} target="_blank" rel="noopener noreferrer">
+                    Sponsor on GitHub
+                    <img class="button-icon" src="/assets/images/github-logo.png" alt="">
+                </a>
+            </div>
+            <p class="support-note">
+                Ko-fi is the easiest way to support FPE. GitHub Sponsors is available for open-source/dev-focused support.
+            </p>
+        </div>
+    </section>
 
     <section class="home-section docs-hub" aria-labelledby="docs-title">
         <div class="section-heading">
@@ -181,5 +217,18 @@ import FeaturedOnGameFromScratch from "../components/index/FeaturedOnGameFromScr
                 Previous versions
             </a>
         </div>
+        <aside class="download-support-card" aria-label="Support Folded Paper Engine">
+            <p>FPE is free. Support keeps it maintained.</p>
+            <div class="download-support-actions">
+                <a class="button gold medium" href={supportUrls.kofiDownload} target="_blank" rel="noopener noreferrer">
+                    <img class="button-icon" src="/assets/images/mug-icon.png" alt="">
+                    Support FPE
+                </a>
+                <a class="button blue medium" href={supportUrls.githubDownload} target="_blank" rel="noopener noreferrer">
+                    <img class="button-icon" src="/assets/images/github-logo.png" alt="">
+                    Sponsor on GitHub
+                </a>
+            </div>
+        </aside>
     </section>
 </SiteLayout>

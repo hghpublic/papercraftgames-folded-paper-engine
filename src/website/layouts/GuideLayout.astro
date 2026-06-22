@@ -3,6 +3,11 @@ import SiteLayout from "./SiteLayout.astro";
 
 const {title, hideGuideIndexBreadcrumb} = Astro.props;
 const isGuideIndex = Astro.url.pathname === "/docs/folded-paper-engine-guide" || Astro.url.pathname === "/docs/folded-paper-engine-guide.html";
+const showDocsSupportBanner = Astro.url.pathname.startsWith("/docs/");
+const supportUrls = {
+    kofiDocs: "https://ko-fi.com/papercraftgames?utm_source=fpe_site&utm_medium=footer&utm_campaign=fpe_support",
+    githubDocs: "https://github.com/sponsors/papercraftgames?utm_source=fpe_site&utm_medium=footer&utm_campaign=fpe_support",
+};
 ---
 
 <SiteLayout {...Astro.props} title={title}>
@@ -33,4 +38,20 @@ const isGuideIndex = Astro.url.pathname === "/docs/folded-paper-engine-guide" ||
     </nav>
 
     <slot/>
+
+  {showDocsSupportBanner && (
+          <aside class="docs-support-banner" aria-label="Support Folded Paper Engine">
+              <p>Using FPE? Support ongoing development, documentation, and showcase projects.</p>
+              <div class="docs-support-actions">
+                  <a class="button gold medium" href={supportUrls.kofiDocs} target="_blank" rel="noopener noreferrer">
+                      <img class="button-icon" src="/assets/images/mug-icon.png" alt=""/>
+                      Support FPE
+                  </a>
+                  <a class="button blue medium" href={supportUrls.githubDocs} target="_blank" rel="noopener noreferrer">
+                      <img class="button-icon" src="/assets/images/github-logo.png" alt=""/>
+                      Sponsor on GitHub
+                  </a>
+              </div>
+          </aside>
+  )}
 </SiteLayout>

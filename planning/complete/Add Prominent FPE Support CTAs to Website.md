@@ -478,15 +478,37 @@ FPE stays free, open-source, and MIT licensed.
 
 ## Acceptance Criteria
 
-* Ko-fi is clearly the primary support path.
-* GitHub Sponsors is much more visible than the current footer-only icon.
-* Homepage has a prominent support section near the top.
-* Download area includes a support reminder.
-* Footer includes clear support links.
-* Docs pages include a subtle support banner.
-* Ko-fi floating widget appears and says `Support FPE`.
-* Site still works if Ko-fi script fails.
-* Existing demo, download buttons, docs links, and social links still work.
-* All external links use `target="_blank"` and `rel="noopener noreferrer"`.
-* Mobile layout remains clean.
-* No private Stripe, tax, phone, address, or payment details are added anywhere.
+* [x] Ko-fi is clearly the primary support path.
+* [x] GitHub Sponsors is much more visible than the current footer-only icon.
+* [x] Homepage has a prominent support section near the top.
+* [x] Download area includes a support reminder.
+* [x] Footer includes clear support links.
+* [x] Docs pages include a subtle support banner.
+* [x] Ko-fi floating widget appears and says `Support FPE`.
+* [x] Site still works if Ko-fi script fails.
+* [x] Existing demo, download buttons, docs links, and social links still work.
+* [x] All external links use `target="_blank"` and `rel="noopener noreferrer"`.
+* [x] Mobile layout remains clean.
+* [x] No private Stripe, tax, phone, address, or payment details are added anywhere.
+
+## Progress
+
+Current phase:
+
+* [x] Add shared header `Support FPE` Ko-fi CTA.
+* [x] Add prominent homepage support section.
+* [x] Add download-area support reminder.
+* [x] Add shared footer support links.
+* [x] Add docs-only support banner through `GuideLayout`.
+* [x] Add centralized Ko-fi floating widget loader.
+* [x] Build and inspect generated output.
+* [x] Run visual/mobile sanity check.
+* [x] Mark acceptance criteria complete after verification.
+
+Verification:
+
+* [x] `yarn build:web` completed successfully and canonical validation passed.
+* [x] Rendered homepage and docs HTML contain support CTAs, docs banner, footer links, and `/support-widget.js`.
+* [x] Headless Chrome mobile screenshots checked for homepage and docs wrapping.
+* [x] GitHub Sponsors URL returned `200`.
+* [x] Ko-fi URL accepted as owner-confirmed; the implemented URL and widget handle match the provided inputs.

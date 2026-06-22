@@ -100,6 +100,7 @@
     .gfs-text h3 {
         margin: 0;
         font-size: 1em;
+        overflow-wrap: anywhere;
     }
 
     .gfs-text p {
@@ -122,10 +123,15 @@
     @media screen and (max-width: 768px) {
         .gfs-card {
             grid-template-columns: 1fr;
+            width: min(100%, 22rem);
         }
 
         .gfs-actions {
             justify-content: flex-start;
+        }
+
+        .gfs-actions .button {
+            width: 100%;
         }
     }
 </style>

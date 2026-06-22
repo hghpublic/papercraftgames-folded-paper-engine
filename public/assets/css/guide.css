@@ -16,10 +16,23 @@
     font-size: 1.25em;
     padding-inline: clamp(1.25rem, 4vw, 3rem);
     background-color: white;
+    width: 100%;
+    max-width: 76rem;
+    min-width: 0;
+    margin-inline: auto;
+    overflow-wrap: anywhere;
 
     &.doc-tiles {
         background: none;
     }
+}
+
+.section > .section-body li,
+.section > .section-body p,
+.section > .section-body code {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .section > .section-body > h3 {
@@ -385,9 +398,27 @@
 
 @media (max-width: 599px) {
     .section > .section-body {
-        width: 100%;
+        width: min(100%, 22rem);
+        max-width: 22rem;
+        align-self: flex-start;
+        margin-left: 0;
+        margin-right: 0;
         padding-inline: 1rem;
         font-size: 1rem;
+    }
+
+    .section > header {
+        align-self: flex-start;
+        max-width: 22rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .section > .section-body ul,
+    .section > .section-body ol {
+        width: 100%;
+        min-width: 0;
+        padding-left: 1.25rem;
     }
 
     .doc-grid {
