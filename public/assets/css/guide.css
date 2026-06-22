@@ -100,6 +100,16 @@
     color: #1f2a44;
 }
 
+.tutorial-intro {
+    width: 100%;
+    max-width: 76rem;
+    margin: 0 auto 1.5rem;
+    color: #1f2a44;
+    font-family: sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.6;
+}
+
 .doc-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

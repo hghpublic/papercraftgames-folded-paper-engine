@@ -3,7 +3,11 @@ import TutorialPlaylistGrid from "../components/TutorialPlaylistGrid";
 import GuideLayout from "../layouts/GuideLayout.astro";
 ---
 
-<GuideLayout title="YouTube Tutorials" hideGuideIndexBreadcrumb>
+<GuideLayout
+        title="Blender to Godot Game Mechanics Tutorials"
+        description="Watch Folded Paper Engine tutorials for creating game mechanics from Blender to Godot, including gameplay tagging, triggers, runtime features, level setup, and playable scene prototyping."
+        hideGuideIndexBreadcrumb
+>
     <section class="web-splash">
         <div class="web-splash-inner video-box">
             <iframe
@@ -28,6 +32,11 @@ import GuideLayout from "../layouts/GuideLayout.astro";
                 </div>
             </div>
         </header>
+
+        <p class="tutorial-intro">
+            These tutorials show how to tag gameplay in Blender and test playable Godot scenes with instant game
+            mechanics.
+        </p>
 
         <!-- Hydrated React component -->
         <TutorialPlaylistGrid

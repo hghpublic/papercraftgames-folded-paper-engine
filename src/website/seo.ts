@@ -13,7 +13,7 @@ const PAGE_SEO: Record<string, PageSeo> = {
     description:
       "Folded Paper Engine is a Blender-to-Godot addon that lets you tag gameplay in Blender, export standard GLTF or GLB scenes, and import them into Godot with gameplay behavior wired up automatically.",
     image: "/assets/images/web-splash.png",
-    heading: "Folded Paper Engine for Blender and Godot",
+    heading: "Instant Game Mechanics from Blender to Godot",
   },
   "/blender-panel-docs": {
     description:
@@ -142,7 +142,7 @@ export function getPageSeo(pathname: string): PageSeo | undefined {
 
 export function getPageTitle(pathname: string, title: string): string {
   if (normalizePathname(pathname) === "/") {
-    return `${SITE_NAME} | Blender-to-Godot addon`;
+    return `${title} | ${SITE_NAME}`;
   }
 
   return `${title} | ${SITE_NAME}`;

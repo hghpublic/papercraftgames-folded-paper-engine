@@ -11,16 +11,16 @@ const supportUrls = {
 ---
 
 <SiteLayout
-        title="Home"
-        description="Folded Paper Engine: Blender-to-Godot addon that reduces boilerplate when creating game levels. Tag gameplay in Blender, export standard GLTF, import to Godot with functionality auto-wired."
+        title="Instant Game Mechanics from Blender to Godot"
+        description="Folded Paper Engine creates instant game mechanics from Blender to Godot. Tag players, triggers, physics, audio, inventory items, scene metadata, and animation events in Blender, then export playable Godot scenes."
 >
     <section class="home-hero" aria-labelledby="home-hero-title">
         <div class="home-hero-copy">
-            <p class="eyebrow">Blender-to-Godot level authoring</p>
+            <p class="eyebrow">Instant Game Mechanics from Blender to Godot</p>
             <h2 id="home-hero-title">Folded Paper Engine</h2>
             <p class="hero-lede">
-                Tag gameplay in Blender, export standard GLTF, and let Godot wire the repetitive setup for players,
-                triggers, speakers, inventory items, scene metadata, and more.
+                Tag gameplay in Blender, export standard GLTF, and open playable Godot scenes with players, triggers,
+                speakers, inventory items, scene metadata, animation events, and more.
             </p>
             <div class="hero-actions" aria-label="Primary actions">
                 <a class="button blue blender-download"
@@ -69,6 +69,8 @@ const supportUrls = {
             <p class="support-card-body">
                 Folded Paper Engine stays free, open-source, and MIT licensed. Support helps fund ongoing maintenance,
                 docs, tutorials, sample projects, and the first official showcase game.
+                Support helps keep instant Blender-to-Godot game mechanics free, maintained, documented, and backed by
+                real showcase projects.
             </p>
             <div class="support-actions">
                 <a class="button gold" href={supportUrls.kofiHome} target="_blank" rel="noopener noreferrer">
@@ -141,6 +143,34 @@ const supportUrls = {
                 <h3>Import to Godot</h3>
                 <p>Add the FoldedPaperEngine node and let the addon enhance imported nodes with the behaviors you tagged.</p>
             </article>
+        </div>
+    </section>
+
+    <section id="instant-game-mechanics" class="home-section mechanics-section" aria-labelledby="mechanics-title">
+        <div class="mechanics-copy">
+            <p class="eyebrow">Blender scene data, Godot runtime behavior</p>
+            <h2 id="mechanics-title">Instant game mechanics from Blender-authored scenes</h2>
+            <p>
+                Folded Paper Engine turns Blender-authored scene metadata into Godot game mechanics. Use Blender panels
+                to tag players, triggers, physics objects, speakers, inventory items, scene transitions, animation
+                events, and other gameplay behavior. Export standard GLTF, then let the Godot addon load the scene and
+                wire the runtime behavior.
+            </p>
+            <p>
+                The goal is not to replace Godot development. FPE removes repetitive setup so artists, designers, and
+                programmers can iterate on playable scenes faster.
+            </p>
+            <p>
+                Because the data travels through standard GLTF custom properties, the same GLTF gameplay metadata can
+                support Blender to Godot game mechanics, quick Godot gameplay prototyping, and later custom runtime
+                scripts.
+            </p>
+            <nav class="mechanics-links" aria-label="Learn more about Folded Paper Engine mechanics">
+                <a href="/blender-panel-docs.html">Blender game logic panels</a>
+                <a href="/godot-feature-docs.html">Godot gameplay features</a>
+                <a href="/youtube-tutorials.html">Blender to Godot tutorials</a>
+                <a href="/demo.html">Playable demo</a>
+            </nav>
         </div>
     </section>
 

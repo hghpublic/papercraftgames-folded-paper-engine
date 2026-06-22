@@ -1,7 +1,10 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 ---
-<SiteLayout title="Godot Features">
+<SiteLayout
+        title="Godot Game Mechanics from Blender Metadata"
+        description="Folded Paper Engine turns Blender-authored GLTF metadata into Godot game mechanics, including players, triggers, physics objects, audio, inventory, scene loading, and animation events."
+>
     <Fragment slot="head">
         <link rel="stylesheet" href="/assets/css/docs.css"/>
     </Fragment>
@@ -27,6 +30,11 @@ import SiteLayout from "../layouts/SiteLayout.astro";
             </div>
         </header>
         <main>
+            <p>
+                The Godot addon reads Blender-authored GLTF metadata and turns tagged objects into working game
+                mechanics inside Godot.
+            </p>
+
             <h3>Install the Godot Addon to get started:</h3>
             <ol>
                 <li>If you haven't gotten started with Blender yet, <a href="/blender-panel-docs.html">take a look at
