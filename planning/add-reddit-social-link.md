@@ -9,6 +9,7 @@ Add Papercraft Games Reddit profile to the website social links with a matching 
 - [x] Create a feature branch from `main`.
 - [x] Locate existing website social link and icon patterns.
 - [x] Add a Reddit icon asset consistent with existing social icons.
+- [x] Replace generated Reddit icon with downloaded transparent logo and matching white stroke.
 - [x] Add the Reddit profile link to the website social links and relevant metadata.
 - [x] Run the relevant website checks/build.
 - [x] Commit and push the branch.
