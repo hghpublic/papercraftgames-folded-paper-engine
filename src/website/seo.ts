@@ -204,6 +204,7 @@ export function buildStructuredData({
         "https://www.youtube.com/@PapercraftGamesOfficial",
         "https://bsky.app/profile/papercraftgames.bsky.social",
         "https://www.facebook.com/profile.php?id=61584265860990",
+        "https://www.reddit.com/user/papercraftgames",
       ],
     },
     {
