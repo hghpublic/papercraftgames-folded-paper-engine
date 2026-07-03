@@ -3,6 +3,12 @@ name: Release (build zips + update version)
 on:
   release:
     types: [ published ]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version to rebuild, for example 1.2.3 or v1.2.3"
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -16,12 +22,35 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 18 }
 
-      - name: Export VERSION from tag
+      - name: Export release target
         run: |
-          V="${{ github.event.release.tag_name }}"
-          V="${V#v}"
-          echo "VERSION=$V" >> $GITHUB_ENV
-          echo "Using VERSION=$V"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            INPUT_VERSION="${{ inputs.version }}"
+            INPUT_VERSION="${INPUT_VERSION#refs/tags/}"
+            case "$INPUT_VERSION" in
+              v*|V*)
+                RELEASE_TAG="$INPUT_VERSION"
+                VERSION="${INPUT_VERSION#[vV]}"
+                ;;
+              *)
+                RELEASE_TAG="v$INPUT_VERSION"
+                VERSION="$INPUT_VERSION"
+                ;;
+            esac
+          else
+            RELEASE_TAG="${{ github.event.release.tag_name }}"
+            VERSION="${RELEASE_TAG#[vV]}"
+          fi
+
+          if [ -z "$VERSION" ] || [ -z "$RELEASE_TAG" ]; then
+            echo "Unable to determine VERSION and RELEASE_TAG" >&2
+            exit 1
+          fi
+
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "RELEASE_TAG=$RELEASE_TAG" >> $GITHUB_ENV
+          echo "Using VERSION=$VERSION"
+          echo "Using RELEASE_TAG=$RELEASE_TAG"
 
       - name: Install deps
         run: yarn
@@ -83,6 +112,6 @@ jobs:
       # Attach zips to the release
       - name: Upload ZIPs to release
         run: |
-          gh release upload "${{ github.event.release.tag_name }}" dist/*.zip --clobber
+          gh release upload "$RELEASE_TAG" dist/*.zip --clobber
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
