@@ -1054,6 +1054,21 @@ body {
     margin: 0;
 }
 
+.feature-grid p + p {
+    margin-top: 0.85rem;
+}
+
+.feature-grid a {
+    color: var(--teal);
+    font-weight: 800;
+    text-decoration-color: rgba(76, 115, 121, 0.35);
+    text-underline-offset: 0.22em;
+}
+
+.feature-grid a:hover {
+    color: var(--coral);
+}
+
 .mechanics-section {
     background: #fffaf0;
 }
