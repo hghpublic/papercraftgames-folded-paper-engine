@@ -13,6 +13,9 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap({
+      filter(page) {
+        return !page.includes("/godot-api-docs/");
+      },
       serialize(item) {
         if (item.url === "https://foldedpaperengine.com/") {
           return {...item, url: "https://foldedpaperengine.com"};

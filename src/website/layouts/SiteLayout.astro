@@ -12,6 +12,7 @@ const {
   description,
   image,
   pageHeading,
+  robots = "index, follow, max-image-preview:large",
   structuredData = [],
 } = Astro.props;
 
@@ -93,7 +94,7 @@ const supportUrls = {
             content="width=device-width, initial-scale=1, maximum-scale=1"
     />
     <meta name="description" content={pageDescription}/>
-    <meta name="robots" content="index, follow, max-image-preview:large"/>
+    <meta name="robots" content={robots}/>
     <meta name="author" content="Papercraft Games"/>
     <meta property="og:site_name" content={siteName}/>
     <meta property="og:type" content="website"/>

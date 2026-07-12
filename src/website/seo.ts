@@ -141,8 +141,22 @@ export function getPageSeo(pathname: string): PageSeo | undefined {
 }
 
 export function getPageTitle(pathname: string, title: string): string {
-  if (normalizePathname(pathname) === "/") {
+  const normalizedPathname = normalizePathname(pathname);
+
+  if (normalizedPathname === "/") {
     return `${title} | ${SITE_NAME}`;
+  }
+
+  if (
+    normalizedPathname === "/blender-panel-docs" ||
+    normalizedPathname === "/godot-feature-docs" ||
+    normalizedPathname.startsWith("/docs/")
+  ) {
+    return `${title} | ${SITE_NAME} Documentation`;
+  }
+
+  if (normalizedPathname.startsWith("/godot-api-docs")) {
+    return `${title} | ${SITE_NAME} Godot API Reference`;
   }
 
   return `${title} | ${SITE_NAME}`;
